@@ -6,18 +6,21 @@ public class SubsetSum {
 
     public static void main(String[] args) {
 
-        int[] arr = {3,4,2,5};
+        int[] arr = {3,2,4,5};
 
         SubsetSum subsetSum = new SubsetSum();
-        //System.out.println(subsetSum.isSubsetSumPresent(arr,1));
 
+        // This gives number of such subarrays
+        System.out.println(subsetSum.isSubsetSumPresent(arr,1));
+
+        // this prints number of
         subsetSum.printAllSubsets(arr,9);
 
 
 
     }
 
-    boolean isSubsetSumPresent(int[] arr, int sum) {
+    int isSubsetSumPresent(int[] arr, int sum) {
         int[][] mat  = new int[sum+1][arr.length+1];
 
         for(int i = 0;i<=arr.length;i++){
@@ -29,13 +32,13 @@ public class SubsetSum {
                 mat[i][j] = mat[i][j-1];
 
                 if(arr[j-1]<=i){
-                  mat[i][j] = mat[i][j-1] | mat[i-arr[j-1]][j-1];
+                  mat[i][j] = mat[i][j-1] + mat[i-arr[j-1]][j-1];
                 }
 
             }
         }
 
-        return mat[sum][arr.length] == 1;
+        return mat[sum][arr.length];
 
     }
 
@@ -77,7 +80,7 @@ public class SubsetSum {
             return;
         }
 
-        if(index ==0 && sum!=0 && mat[sum][arr[0]]==1) {
+        if(index ==0 && sum!=0 && mat[sum-arr[0]][0]==1) {
             al.add(arr[0]);
             //print
             for(Integer a : al){
