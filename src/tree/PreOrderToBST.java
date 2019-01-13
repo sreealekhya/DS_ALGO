@@ -55,7 +55,7 @@ public class PreOrderToBST {
             if(!stack.isEmpty() && n==null) {
                n = stack.peek();
                n.left = new Node(preOrder[i]);
-                stack.push(n.left);
+               stack.push(n.left);
             }
 
 

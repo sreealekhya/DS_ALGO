@@ -30,7 +30,7 @@ public class SlidingWindow {
 
     Integer[] findMaxElements(int[] arr, int k) {
         Deque<Integer> slidingMaxElementsSlide = new LinkedList<>();
-        Integer[] resultArray = new Integer[arr.length-2];
+        Integer[] resultArray = new Integer[arr.length-k-1];
 
         int j =0;
         int i = 0;

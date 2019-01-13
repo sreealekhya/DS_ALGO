@@ -51,7 +51,8 @@ public class BoundaryTraversal {
 
         if(root.left==null && root.right!=null) {
             System.out.println(root.data);
-            printLeft(root.right);}
+            printLeft(root.right);
+        }
     }
 
     void printLeaves(Node root) {

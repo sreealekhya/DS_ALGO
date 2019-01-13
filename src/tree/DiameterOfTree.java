@@ -1,7 +1,6 @@
 package tree;
 
 /**
- * Created by Sreemani Alekhya on 31/12/18.
  * The diameter of a tree is the number of nodes on the
  * longest path between two leaves in the tree.
  * The diagram below shows two trees each with diameter nine,
@@ -11,7 +10,8 @@ package tree;
 
  Examples:
 
- Input :     1
+ Input :
+ 1
  /   \
  2      3
  /  \
@@ -19,7 +19,8 @@ package tree;
 
  Output : 4
 
- Input :     1
+ Input :
+ 1
  /   \
  2      3
  /  \ .    \

@@ -14,7 +14,7 @@ import java.util.Stack;
 public class StockAndSpan {
 
     public static void main(String[] args) {
-        int[] arr = {2,2,2,3};
+        int[] arr = {100, 80, 60, 70, 60, 75, 85};
         StockAndSpan stockAndSpan = new StockAndSpan();
         int[] res = stockAndSpan.stockAndSpan(arr);
 
