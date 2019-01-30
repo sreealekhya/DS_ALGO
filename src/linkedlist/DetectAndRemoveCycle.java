@@ -26,6 +26,7 @@ public class DetectAndRemoveCycle {
         }
         System.out.println("null");
     }
+
     Node dAndR(Node head) {
         if(head ==null) return null;
         if(head.getNext()==head) {

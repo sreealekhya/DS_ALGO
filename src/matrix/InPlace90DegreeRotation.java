@@ -36,6 +36,7 @@ public class InPlace90DegreeRotation {
     int[][] rotateSquareMatrix(int[][] mat) {
         int N = mat.length;
         for(int i=0;i<mat.length;i++) {
+            //mat.length-i-1 is imp
             for(int j=i;j<mat.length-i-1;j++) {
                 int temp = mat[N-j-1][i];
                 mat[N-j-1][i] = mat[N-i-1][N-j-1];

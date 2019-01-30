@@ -21,7 +21,7 @@ public class CoinChange {
         CoinChange coinChange = new CoinChange();
         System.out.println(coinChange.countAllPossibilities(S, 10));
 
-        int[] S1 = {1,2,  3};
+        int[] S1 = {1,2,3};
 
         coinChange.printAllCombs(S1,4);
 

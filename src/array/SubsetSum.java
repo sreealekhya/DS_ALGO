@@ -11,7 +11,7 @@ public class SubsetSum {
         SubsetSum subsetSum = new SubsetSum();
 
         // This gives number of such subarrays
-        System.out.println(subsetSum.isSubsetSumPresent(arr,1));
+        System.out.println(subsetSum.isSubsetSumPresent(arr,9));
 
         // this prints number of
         subsetSum.printAllSubsets(arr,9);
@@ -92,13 +92,13 @@ public class SubsetSum {
         }
 
 
-        if(mat[sum][index]==1) {
+        if(mat[sum][index]>=1) {
             //ArrayList<Integer> new_lis = new ArrayList<>();
             //new_lis.addAll(al);
             printAllSubs(arr,sum,al,index-1,mat);
         }
 
-        if(sum>=arr[index] && mat[sum-arr[index]][index]==1){
+        if(sum>=arr[index] && mat[sum-arr[index]][index]>=1){
             al.add(arr[index]);
             printAllSubs(arr,sum-arr[index],al,index-1,mat);
             al.remove(al.size()-1);

@@ -19,4 +19,52 @@ package array;
  Subset2 = {11}, sum of Subset2 = 11
  */
 public class DifferenceOfSubsetsIsMinimum {
+
+
+
+    public static void main(String[] args) {
+
+        int[] arr = {1,6,11,5};
+        DifferenceOfSubsetsIsMinimum differenceOfSubsetsIsMinimum = new DifferenceOfSubsetsIsMinimum();
+
+        System.out.println(differenceOfSubsetsIsMinimum.calculate(arr));
+
+
+    }
+
+    int calculate(int[] input) {
+        int sum = 0;
+        for(int i=0;i<input.length;i++) {
+            sum += input[i];
+        }
+
+        int resMatrix[][] = new int[sum+1][input.length+1];
+
+
+        for(int i =0;i<=input.length;i++) {
+            resMatrix[0][i]=1;
+        }
+
+
+        for(int i =1;i<=sum;i++) {
+            for(int j=1;j<=input.length;j++) {
+                resMatrix[i][j] = resMatrix[i][j-1];
+
+                if(input[j-1]<=i) {
+                    resMatrix[i][j] = resMatrix[i][j-1] | resMatrix[i-input[j-1]][j-1];
+                }
+            }
+        }
+
+        int diff = 0;
+
+        for(int i = 0;i<=sum/2;i++) {
+            if(resMatrix[i][input.length]==1) {
+                diff = sum - 2*i;
+            }
+        }
+
+        return diff;
+    }
+
 }
